@@ -1,4 +1,4 @@
-CREATE DATABASE salon;
+CREATE DATABASE salon_test;
 
 CREATE TABLE customers(
     customer_id SERIAL PRIMARY KEY,
@@ -7,7 +7,8 @@ CREATE TABLE customers(
 );
 
 CREATE TABLE services(
-    service_id SERIAL PRIMARY KEY
+    service_id SERIAL PRIMARY KEY,
+    name VARCHAR(50)
 );
 
 CREATE TABLE appointments(
@@ -18,3 +19,5 @@ CREATE TABLE appointments(
     FOREIGN KEY(service_id) REFERENCES services(service_id),
     time VARCHAR(25)
 );
+
+INSERT INTO services(name) VALUES ('cut'), ('color'), ('perm'), ('style'), ('trim');
